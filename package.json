@@ -1,0 +1,29 @@
+{
+  "name": "obj-to-svg",
+  "version": "0.0.0",
+  "description": "2d image of 3d objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "child-process": "^1.0.2",
+    "child_process": "^1.0.2",
+    "express": "~4.16.2",
+    "express-fileupload": "~0.3.0",
+    "node-cmd": "^3.0.0",
+    "node-run-cmd": "^1.0.1",
+    "nodemon": "^1.12.1",
+    "python-shell": "~0.4.0",
+    "socket.io": "~2.0.4"
+  }
+}
