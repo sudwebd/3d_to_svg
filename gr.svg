@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="364" height="364"
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+<title>gr</title>
+<path d="M 32.000000 132.000000 L 202.710678 161.289322 L 302.710678 61.289322 L 132.000000 32.000000 Z" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linejoin:round;stroke-opacity:1.000000;fill:rgb(102,0,0);fill-opacity:1.000000" />
+<path d="M 202.710678 161.289322 L 232.000000 332.000000 L 332.000000 232.000000 L 302.710678 61.289322 Z" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linejoin:round;stroke-opacity:1.000000;fill:rgb(102,0,0);fill-opacity:1.000000" />
+<path d="M 32.000000 132.000000 L 61.289322 302.710678 L 232.000000 332.000000 L 202.710678 161.289322 Z" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linejoin:round;stroke-opacity:1.000000;fill:rgb(144,0,0);fill-opacity:1.000000" />
+</svg>

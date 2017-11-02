@@ -28,7 +28,7 @@ app.post('/upload', function(req, res) {
   filenm=sampleFile.name;filewext=filenm.replace(".obj","");
   console.log(filenm);console.log(filewext);
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv(__dirname+filenm, function(err) {
+  sampleFile.mv(__dirname+'/'+filenm, function(err) {
     if (err)
       return res.status(500).send(err);
 
@@ -51,9 +51,11 @@ app.post('/result',function(req,res){
 //  var arg1=' --vx '+viewx+' --vy '+viewy+' --vz '+viewz+' -H '+height+' -W '+width+' objs/'+filenm+' -o outputs/candy.svg';
     //var process = spawn('python',["/home/shubham/Desktop/svg_visualization/obj-to-svg/main.py", arg1]);
   var options = { cwd: '/home/shubham/Desktop/svg_visualization/obj-to-svg/' };
-  var commn='./a.out '+filenm+' '+rotationx+' '+rotationy+' '+rotationz;
+  var commn='./poly '+filenm+' '+rotationx+' '+rotationy+' '+rotationz;
   var commannds=[commn];
   nrc.run(commannds,options);
 
-  res.sendFile(__dirname + '/result.html');
+  setTimeout(function(){ console.log("Hello"); }, 3000);
+
+  res.sendFile(__dirname + '/'+filewext+'.svg');
 });
