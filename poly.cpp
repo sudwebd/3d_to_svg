@@ -831,50 +831,6 @@ void write_faces(ofstream& file, vector< pair<double,int> >& z_list,
 	}
 }
 
-vector< vector<int> > clip_faces(vector< vector<int> > faces,vector<Vector3d>& vertices,
-	double observer, map<vector<int>,string>& transformed_material_of_faces,
-	map<vector<int>,string> material_of_faces) {
-	double screen = observer - 400;
-	vector< vector<int> > transformed_faces;
-
-	for(int j=0;j<faces.size();j++){
-		vector<int> face = faces[j];
-		string material_name = material_of_faces[face];
-		vector<int> clipped_face;
-		for(int i=0;i<face.size();i++){
-			Vector3d v1 = vertices[face[i]-1];
-			Vector3d v2 = vertices[face[(i+1)%face.size()]-1];
-			if((v1(2)>screen) && (v2(2)<=screen)){
-				double factor = (screen-v1(2))/(v2(2)-v1(2));
-				double x = v1(0)+(factor*(v2(0)-v1(0)));
-				double y = v1(1)+(factor*(v2(1)-v1(1)));
-				double z = screen;
-				Vector3d v3(x,y,z);
-				vertices.push_back(v3);
-				clipped_face.push_back(vertices.size());
-			}
-			else if((v1(2)<=screen) && (v2(2)>screen)){
-				double factor = (screen-v1(2))/(v2(2)-v1(2));
-				double x = v1(0)+(factor*(v2(0)-v1(0)));
-				double y = v1(1)+(factor*(v2(1)-v1(1)));
-				double z = screen;
-				Vector3d v3(x,y,z);
-				vertices.push_back(v3);
-				clipped_face.push_back(face[i]);
-				clipped_face.push_back(vertices.size());
-			}
-			else if((v1(2)<=screen) && (v2(2)<=screen)){
-				clipped_face.push_back(face[i]);
-			}
-		}
-		if(clipped_face.size()>0){
-			transformed_material_of_faces[clipped_face] = material_name;
-			transformed_faces.push_back(clipped_face);
-		}
-	}
-	return transformed_faces;
-}
-
 int main(int argc, char* argv[]){
 	Object_3D obj;
 	string filename = "";
